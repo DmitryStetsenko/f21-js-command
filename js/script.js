@@ -1,44 +1,39 @@
 
-let currency = document.querySelector('.currency')
-let deposite = document.querySelector('.deposite')
-const putBtn = document.querySelector('.put-btn')
-let rate ;
+let currency = document.querySelector(".currency");
+let deposite = document.querySelector(".deposite");
+const putBtn = document.querySelector(".put-btn");
+let rate;
+
 let balance = 0;
 
-function auth(){
-    console.log('auth')
-}
-function menu(){
-    console.log('menu')
-}
+putBtn.addEventListener("click", putMoney);
 
-function getBalance(){
-    console.log('getBalance')
+function auth() {
+  console.log("auth");
+}
+function menu() {
+  console.log("menu");
 }
 
-function getMoney(){
-    console.log('getMoney')
+function getBalance() {
+  console.log("getBalance");
 }
 
-
-function currencyRate(){
-rate = currency.value
-
-} 
-function putMoney(){   
-balance = deposite.value * rate;
-console.log(balance);
+function getMoney() {
+  console.log("getMoney");
 }
 
-putBtn.addEventListener('click', currencyRate)
-putBtn.addEventListener('click', putMoney)
-
-
-function changeCurr(){
-    console.log('changeCurr')
+function putMoney() {
+  rate = currency.value;
+  balance = deposite.value * rate;
+  console.log(balance);
 }
-function currCalc(){
-    console.log('currCalc')
+
+function currCalc() {
+  console.log("currCalc");
+}
+function chengePin() {
+  console.log("chengePin");
 }
 
 function changePinCode (pincode) {
@@ -47,6 +42,7 @@ function changePinCode (pincode) {
     console.log(pincode);
     return pincode;
 }
+
 
 
 let currCurrency = 'UAH';
@@ -77,4 +73,5 @@ document.querySelector('.UAH').onclick(() => {
     changeCurrency('UAH', currCurrency, currency, balance);
     currCurrency = 'UAH';
 })
+
 
