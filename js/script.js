@@ -4,25 +4,30 @@ let deposite = document.querySelector(".deposite");
 const putBtn = document.querySelector(".put-btn");
 let rate;
 let currCurrency = 'UAH';
+let newCurr =' ';
 
 let balance = 0;
 
 putBtn.addEventListener("click", putMoney);
 
 //Daniil
-document.querySelector('.USD').onclick(() => {
+document.querySelector('.USD').addEventListener('click', (() => {
     changeCurr('USD', currCurrency, newCurr, balance);
     currCurrency = 'USD';
-});
-document.querySelector('.EUR').onclick(() => {
+    console.log(newCurr);
+
+}));
+document.querySelector('.EUR').addEventListener('click',(() => {
     changeCurr('EUR', currCurrency, newCurr, balance);
     currCurrency = 'EUR';
-});
-document.querySelector('.UAH').onclick(() => {
+    console.log(newCurr);
+
+}));
+document.querySelector('.UAH').addEventListener('click',(() => {
     changeCurr('UAH', currCurrency, newCurr, balance);
     console.log(newCurr);
     currCurrency = 'UAH';
-});
+}));
 //
 
 function auth() {
@@ -53,12 +58,12 @@ function changeCurr(currentCurr, changedCur, currency, balance){
         EUR: 39.51,
     }
     if (changedCur == 'UAH'){
-        currency = `${balance * currencyRate[currentCurr]} ${changeCurrency}`;
+        currency = `${balance * currencyRate[currentCurr]} ${changedCur}`;
         balance = balance * currencyRate[currentCurr];
         console.log(currency)
     }
     else{
-        currency = `${balance * (1/currencyRate[currentCurr])} ${changeCurrency}`
+        currency = `${balance * (1/currencyRate[currentCurr])} ${changedCur}`
         balance = balance * (1/currencyRate[currentCurr]);
         console.log(currency);
     }
