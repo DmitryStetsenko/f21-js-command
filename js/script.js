@@ -42,7 +42,7 @@ function currCalc(){
 
 function changePinCode (pincode) {
     localStorage.setItem('pin', `${Number(prompt('Введите новый пин-код'))}`);
-    let pincode = localStorage.getItem('pin');
+    pincode = localStorage.getItem('pin');
     console.log(pincode);
     return pincode;
 }
