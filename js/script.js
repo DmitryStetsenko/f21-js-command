@@ -7,39 +7,39 @@ let balance = 0;
 putBtn.addEventListener("click", putMoney);
 
 function auth() {
-  console.log("auth");
+    console.log("auth");
 }
 function menu() {
-  console.log("menu");
+    console.log("menu");
 }
 
 function getBalance() {
-  console.log("getBalance");
+    console.log("getBalance");
 }
 
 function getMoney() {
-  console.log("getMoney");
+    console.log("getMoney");
 }
 
 function putMoney() {
-  rate = currency.value;
-  balance = deposite.value * rate;
-  console.log(balance);
+    rate = currency.value;
+    balance = deposite.value * rate;
+    console.log(balance);
 }
 
 function changeCurr() {
-  console.log("changeCurr");
+    console.log("changeCurr");
 }
 function currCalc() {
-  console.log("currCalc");
+    console.log("currCalc");
 }
 function chengePin() {
-  console.log("chengePin");
+    console.log("chengePin");
 }
 
-function changePinCode (pincode) {
-    localStorage.setItem('pin', `${Number(prompt('Введите новый пин-код'))}`);
-    pincode = localStorage.getItem('pin');
+function changePinCode(pincode) {
+    localStorage.setItem("pin", `${Number(prompt("Введите новый пин-код"))}`);
+    pincode = localStorage.getItem("pin");
     console.log(pincode);
     return pincode;
 }
