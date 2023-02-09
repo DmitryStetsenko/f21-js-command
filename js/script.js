@@ -4,6 +4,8 @@ const putBtn = document.querySelector(".put-btn");
 let rate;
 let balance = 0;
 
+putBtn.addEventListener("click", putMoney);
+
 function auth() {
   console.log("auth");
 }
@@ -19,15 +21,11 @@ function getMoney() {
   console.log("getMoney");
 }
 
-
 function putMoney() {
   rate = currency.value;
   balance = deposite.value * rate;
   console.log(balance);
 }
-
-
-putBtn.addEventListener("click", putMoney);
 
 function changeCurr() {
   console.log("changeCurr");
