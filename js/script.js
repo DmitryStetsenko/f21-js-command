@@ -2,6 +2,8 @@
 let currency = document.querySelector(".currency");
 let deposite = document.querySelector(".deposite");
 const putBtn = document.querySelector(".put-btn");
+const takeMoneyBtn = document.querySelector('.takeMoneyBtn');
+
 let rate;
 let currCurrency = 'UAH';
 let newCurr =' ';
@@ -41,8 +43,76 @@ function getBalance() {
     console.log("getBalance");
 }
 
+takeMoneyBtn.addEventListener('click', function(){
+    getMoney();
+})
+
 function getMoney() {
     console.log("getMoney");
+    console.log(balance);
+    alert('Ваш баланс ' + balance + ' UAH');
+    let curencyCheck = prompt('Какую валюту вы хотите снять? (UAH, USD, EUR, GBP)', '');
+
+    if(curencyCheck == 'USD'){
+        let balanceUSD = (balance / 40);
+        console.log(balanceUSD);
+        cash = prompt('Сколько наличных вы хотите снять?', '');
+        alert(`Вы хотите снять ${cash} usd`);
+        console.log(cash);
+        if(cash > balanceUSD){
+        alert("Недостаточный баланс");
+        } else if (cash <= balanceUSD){
+        alert('Возьмите ваши наличные')
+        }else{
+        alert('ERROR 404');
+        }
+    
+    }else if(curencyCheck == 'UAH'){
+        //console.log(currency.uah);
+        cash = prompt('Сколько наличных вы хотите снять?', '');
+        alert(`Вы хотите снять ${cash} uah`);
+        console.log(cash);
+        if(cash > balance){
+         alert("Недостаточный баланс");
+        } else if (cash <= balance){
+         alert('Возьмите ваши наличные')
+        }else{
+            alert('ERROR 404');
+        }
+    
+    }else if(curencyCheck == 'EUR'){
+        //console.log(currency.eur);
+        let balanceEUR = (balance / 41);
+        cash = prompt('Сколько наличных вы хотите снять?', '');
+        alert(`Вы хотите снять ${cash} eur`);
+        console.log(cash);
+        if(cash > balanceEUR){
+         alert("Недостаточный баланс");
+        } else if (cash <= balanceEUR){
+         alert('Возьмите ваши наличные')
+        }else{
+            alert('ERROR 404');
+        }
+    
+    }else if(curencyCheck == 'gbp'){
+        //console.log(currency.gbp);
+        let balanceGBP = (balance / 42);
+        console.log(balanceGBP);
+        cash = prompt('Сколько наличных вы хотите снять?', '');
+        alert(`Вы хотите снять ${cash} gbp`);
+        console.log(cash);
+        if(cash > balanceGBP){
+         alert("Недостаточный баланс");
+        } else if (cash <= balanceGBP){
+         alert('Возьмите ваши наличные')
+        }else{
+            alert('ERROR 404');
+        }
+    
+    }else{
+        console.log('Wrong Curency!!!');
+    }
+
 }
 
 function putMoney() {
@@ -83,8 +153,6 @@ function changePinCode(pincode) {
     console.log(pincode);
     return pincode;
 }
-
-
 
 
 
