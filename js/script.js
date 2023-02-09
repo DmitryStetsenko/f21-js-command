@@ -1,28 +1,45 @@
-let balance = 1000;
-let currency = 'uah';
+let currency = document.querySelector(".currency");
+let deposite = document.querySelector(".deposite");
+const putBtn = document.querySelector(".put-btn");
+let rate;
+let balance = 0;
 
-while (true) {
-    const userChoose = prompt('1. balance, 2.get money, 3.put money, 4.exit');
-    if (userChoose == '1') {
-        getBalance();
-    } else if (userChoose == '2') {
-        getMoney();
-    } else if (userChoose == '3') {
-        putMoney()
-    } else if (userChoose == '4') {
-        break;
-    } else {
-        alert('Error type');
-    }
+putBtn.addEventListener("click", currencyRate);
+putBtn.addEventListener("click", putMoney);
+
+function auth() {
+    console.log("auth");
 }
-
+function menu() {
+    console.log("menu");
+}
 
 function getBalance() {
-    alert(balance);
+    console.log("getBalance");
 }
+
 function getMoney() {
-    alert('getMoney');
+    console.log("getMoney");
+}
+
+function currencyRate() {
+    rate = currency.value;
 }
 function putMoney() {
-    alert('putMoney');
+    balance = deposite.value * rate;
+    console.log(balance);
+}
+
+function changeCurr() {
+    console.log("changeCurr");
+}
+function currCalc() {
+    console.log("currCalc");
+}
+
+function changePinCode(pincode) {
+    localStorage.setItem("pin", `${Number(prompt("Введите новый пин-код"))}`);
+    let pincode = localStorage.getItem("pin");
+    console.log(pincode);
+    return pincode;
 }
