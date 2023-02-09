@@ -8,7 +8,7 @@ while (true) {
     } else if (userChoose == '2') {
         getMoney();
     } else if (userChoose == '3') {
-        gputMoney()
+        putMoney()
     } else if (userChoose == '4') {
         break;
     } else {
