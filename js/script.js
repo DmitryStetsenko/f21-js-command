@@ -11,17 +11,18 @@ putBtn.addEventListener("click", putMoney);
 
 //Daniil
 document.querySelector('.USD').onclick(() => {
-    changeCurr('USD', currCurrency, currency, balance);
+    changeCurr('USD', currCurrency, newCurr, balance);
     currCurrency = 'USD';
-})
+});
 document.querySelector('.EUR').onclick(() => {
-    changeCurr('EUR', currCurrency, currency, balance);
+    changeCurr('EUR', currCurrency, newCurr, balance);
     currCurrency = 'EUR';
-})
+});
 document.querySelector('.UAH').onclick(() => {
-    changeCurr('UAH', currCurrency, currency, balance);
+    changeCurr('UAH', currCurrency, newCurr, balance);
+    console.log(newCurr);
     currCurrency = 'UAH';
-})
+});
 //
 
 function auth() {
@@ -53,10 +54,12 @@ function changeCurr(currentCurr, changedCur, currency, balance){
     }
     if (changedCur == 'UAH'){
         currency = `${balance * currencyRate[currentCurr]} ${changeCurrency}`;
+        balance = balance * currencyRate[currentCurr];
         console.log(currency)
     }
     else{
         currency = `${balance * (1/currencyRate[currentCurr])} ${changeCurrency}`
+        balance = balance * (1/currencyRate[currentCurr]);
         console.log(currency);
     }
 }
