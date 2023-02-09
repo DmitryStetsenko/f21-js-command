@@ -5,6 +5,7 @@
 }
 
 body {
+    font-family: sans-serif;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -33,4 +34,18 @@ body {
     position: fixed;
     padding: 20px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, .3);
+    min-height: 500px;
+    min-width: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.balance-block {
+    font-size: 50px;
+    font-weight: bold;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
 }
