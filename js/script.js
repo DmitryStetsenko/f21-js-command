@@ -39,6 +39,10 @@ function changeCurr(){
 function currCalc(){
     console.log('currCalc')
 }
-function chengePin(){
-    console.log('chengePin')
+
+function changePinCode (pincode) {
+    localStorage.setItem('pin', `${Number(prompt('Введите новый пин-код'))}`);
+    let pincode = localStorage.getItem('pin');
+    console.log(pincode);
+    return pincode;
 }
