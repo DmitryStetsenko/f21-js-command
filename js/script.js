@@ -1,8 +1,20 @@
+//Vova
+localStorage.setItem('links', JSON.stringify(
+    {
+        id: 1,
+        name: 'User1',
+        pincode: 1111
+    }
+));
+//
 
+const user = JSON.parse(localStorage.getItem('links')); //Vova
+const putBtn = document.querySelector(".put-btn"); //Vova
+const changeBtn = document.querySelector(".change-btn"); //Vova
+const takeMoneyBtn = document.querySelector('.takeMoneyBtn');
 let currency = document.querySelector(".currency");
 let deposite = document.querySelector(".deposite");
-const putBtn = document.querySelector(".put-btn");
-const takeMoneyBtn = document.querySelector('.takeMoneyBtn');
+let pin = user.pincode;//Vova
 
 let rate;
 let currCurrency = 'UAH';
@@ -30,6 +42,12 @@ document.querySelector('.UAH').addEventListener('click',(() => {
     console.log(newCurr);
     currCurrency = 'UAH';
 }));
+//
+
+//Vova
+changeBtn.onclick = function() {
+    changePinCode(pin);
+}
 //
 
 function auth() {
@@ -143,16 +161,15 @@ function changeCurr(currentCurr, changedCur, currency, balance){
 function currCalc() {
     console.log("currCalc");
 }
-function chengePin() {
-    console.log("chengePin");
-}
 
+//Vova
 function changePinCode(pincode) {
     localStorage.setItem("pin", `${Number(prompt("Введите новый пин-код"))}`);
     pincode = localStorage.getItem("pin");
     console.log(pincode);
     return pincode;
 }
+//
 
 
 
