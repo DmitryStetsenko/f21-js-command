@@ -50,6 +50,26 @@ changeBtn.onclick = function() {
 }
 //
 
+// Maxym
+
+const crrncy = {
+    'EUR': {'UAH': 40, 'USD': 0.83, 'GBP': 0.7}, 
+    'USD': {'UAH': 41, 'EUR': 1.2, 'GBP': 0.7},
+    'UAH': {'EUR': 0.024, 'USD': 0.023, 'GBP': 0.022},
+    'GBP': {'UAH': 45, 'USD': 1.3, 'EUR': 1.4}
+}
+
+const btn = document.querySelector('.calculate-btn');
+const baseCurrencyInput = document.getElementById('currency-1');
+const secondCurrencyInput = document.getElementById('currency-2');
+const amountInput = document.getElementById('amount');
+const toShowAmount = document.querySelector('.given-amount');
+const toShowBase = document.querySelector('.base-currency');
+const toShowSecond = document.querySelector('.second-currency');
+const toShowResult = document.querySelector('.final-result');
+
+// Maxym
+
 function auth() {
     console.log("auth");
 }
@@ -157,10 +177,35 @@ function changeCurr(currentCurr, changedCur, currency, balance){
     }
 }
 
+// Maxym
 
-function currCalc() {
-    console.log("currCalc");
+function currCalc(event) {
+    event.preventDefault();
+    let amount = amountInput.value;
+    let from = baseCurrencyInput.value;
+    let to = secondCurrencyInput.value;
+    let letresult = 0;
+    
+    try{
+      if (from == to){
+        result = amount;
+      } else {
+       result = amount * crrncy[from][to];
+    }
+    }
+    catch(err) {
+      result = amount * (1 / crrncy[to][from]);
+    }
+    
+    toShowAmount.innerHTML = amount;
+    toShowBase.textContent = from + ' = ';
+    toShowSecond.textContent = to;
+    toShowResult.textContent = result; 
 }
+  
+btn.addEventListener('click', currCalc);
+
+// Maxym
 
 //Vova
 function changePinCode(pincode) {
@@ -170,8 +215,3 @@ function changePinCode(pincode) {
     return pincode;
 }
 //
-
-
-
-
-
