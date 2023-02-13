@@ -1,3 +1,6 @@
+// Viacheslav
+authorization();
+
 //Vova
 localStorage.setItem(
   "links",
@@ -234,3 +237,23 @@ function changePinCode(pincode) {
   return pincode;
 }
 //
+
+// Viacheslav
+function authorization() { 
+	const attempt = 3;
+	for (let i = 1; i <= attempt; i++) { 
+		const pinCode = 1234;
+		const pinInput = prompt('Введіть пін-код:');
+		if (pinInput == pinCode) {
+			alert('Вітаємо!');
+			// ======= function "MENU" ========
+			break
+		} else { 
+			if (i == 2 || i == 1) {
+				alert(`Ви ввели не вірний пін-код!!!\nЗалишилося спроб - ${attempt - i}`);
+			} else { 
+				alert('Ви 3 рази ввели не вірний пін-код !!!\nВашу карту заблоковано !!!');
+			}
+		}
+	}
+}
