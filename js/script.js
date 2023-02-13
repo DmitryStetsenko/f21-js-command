@@ -19,6 +19,7 @@ let pin = user.pincode;//Vova
 let rate;
 let currCurrency = 'UAH';
 let newCurr =' ';
+let displayBalance = document.querySelector('.balance');
 
 let balance = 0;
 
@@ -153,11 +154,16 @@ function getMoney() {
 
 }
 
+//<olesia>
+
 function putMoney() {
     rate = currency.value;
     balance = deposite.value * rate;
     console.log(balance);
+    displayBalance.innerText = balance;
 }
+
+//</olesia>
 
 //Daniil
 function changeCurr(currentCurr, changedCur, currency, balance){
