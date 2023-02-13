@@ -62,3 +62,6 @@ body {
 .deposite, .currency{
     margin: 10px;
 }
+.none{
+    display: none;
+}
