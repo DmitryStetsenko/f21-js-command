@@ -92,6 +92,7 @@ takeMoneyBtn.addEventListener("click", function () {
 });
 takeMoneyBtn2.addEventListener("click", function () {
   getMoney();
+  console.log("take money")
 });
 
 function getMoney() {
