@@ -257,7 +257,8 @@ function authorization() {
 			if (i == 2 || i == 1) {
 				alert(`Ви ввели не вірний пін-код!!!\nЗалишилося спроб - ${attempt - i}`);
 			} else { 
-				alert('Ви 3 рази ввели не вірний пін-код !!!\nВашу карту заблоковано !!!');
+        alert('Ви 3 рази ввели не вірний пін-код !!!\nВашу карту заблоковано !!!');
+        document.querySelector("body").style = "display: none";
 			}
 		}
 	}
