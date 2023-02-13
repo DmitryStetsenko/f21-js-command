@@ -16,6 +16,7 @@ const user = JSON.parse(localStorage.getItem("links")); //Vova
 const putBtn = document.querySelector(".put-btn"); //Vova
 const changeBtn = document.querySelector(".change-btn"); //Vova
 const takeMoneyBtn = document.querySelector(".takeMoneyBtn");
+const takeMoneyBtn2 = document.querySelector(".takeMoneyBtn2");
 let currency = document.querySelector(".currency");
 let deposite = document.querySelector(".deposite");
 let pin = user.pincode; //Vova
@@ -87,6 +88,9 @@ function getBalance() {
 }
 
 takeMoneyBtn.addEventListener("click", function () {
+  getMoney();
+});
+takeMoneyBtn2.addEventListener("click", function () {
   getMoney();
 });
 
