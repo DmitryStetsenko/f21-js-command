@@ -19,29 +19,30 @@ let pin = user.pincode; //Vova
 const putMoneyBlock = document.querySelector(".put-money-block");
 
 let rate;
-let currCurrency = "UAH";
+let changedCur = "UAH";
 let newCurr = " ";
 let displayBalance = document.querySelector(".balance");
 
-let balance = 0;
+let balance = 1;
 
 putBtn.addEventListener("click", putMoney);
 
 //Daniil
 document.querySelector(".USD").addEventListener("click", () => {
-  changeCurr("USD", currCurrency, newCurr, balance);
-  currCurrency = "USD";
+  changeCurr( "USD",changedCur,  newCurr, balance);
+  changedCur = "USD";
   console.log(newCurr);
+  
 });
 document.querySelector(".EUR").addEventListener("click", () => {
-  changeCurr("EUR", currCurrency, newCurr, balance);
-  currCurrency = "EUR";
+  changeCurr( "EUR", changedCur, newCurr, balance);
+  changedCur = "EUR";
   console.log(newCurr);
 });
 document.querySelector(".UAH").addEventListener("click", () => {
-  changeCurr("UAH", currCurrency, newCurr, balance);
+  changeCurr("UAH", changedCur,  newCurr, balance);
   console.log(newCurr);
-  currCurrency = "UAH";
+  changedCur = "UAH";
 });
 //
 
@@ -176,10 +177,12 @@ function changeCurr(currentCurr, changedCur, currency, balance) {
     currency = `${balance * currencyRate[currentCurr]} ${changedCur}`;
     balance = balance * currencyRate[currentCurr];
     console.log(currency);
+    displayBalance.innerHTML = `${currency} `
   } else {
     currency = `${balance * (1 / currencyRate[currentCurr])} ${changedCur}`;
     balance = balance * (1 / currencyRate[currentCurr]);
     console.log(currency);
+    displayBalance.innerHTML = `${balance} ${currency} `
   }
 }
 
