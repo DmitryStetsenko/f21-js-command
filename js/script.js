@@ -105,6 +105,9 @@ function getMoney() {
       alert("Недостаточный баланс");
     } else if (cash <= balanceUSD) {
       alert("Возьмите ваши наличные");
+      dollarBill = cash * 40;
+      balance = balance - dollarBill;
+      displayBalance.innerText = balance;
     } else {
       alert("ERROR 404");
     }
@@ -117,6 +120,8 @@ function getMoney() {
       alert("Недостаточный баланс");
     } else if (cash <= balance) {
       alert("Возьмите ваши наличные");
+      balance = balance - cash;
+      displayBalance.innerText = balance;
     } else {
       alert("ERROR 404");
     }
@@ -130,6 +135,9 @@ function getMoney() {
       alert("Недостаточный баланс");
     } else if (cash <= balanceEUR) {
       alert("Возьмите ваши наличные");
+      euroBill = cash * 41;
+      balance = balance - euroBill;
+      displayBalance.innerText = balance;
     } else {
       alert("ERROR 404");
     }
@@ -144,6 +152,9 @@ function getMoney() {
       alert("Недостаточный баланс");
     } else if (cash <= balanceGBP) {
       alert("Возьмите ваши наличные");
+      phuntBill = cash * 41;
+      balance = balance - phuntBill;
+      displayBalance.innerText = balance;
     } else {
       alert("ERROR 404");
     }
