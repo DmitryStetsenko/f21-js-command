@@ -23,7 +23,7 @@ let changedCur = "UAH";
 let newCurr = " ";
 let displayBalance = document.querySelector(".balance");
 
-let balance = 1;
+let balance = 0;
 
 putBtn.addEventListener("click", putMoney);
 

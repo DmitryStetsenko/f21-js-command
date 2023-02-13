@@ -66,3 +66,12 @@ body {
 .none{
     display: none;
 }
+.choseCurr button{
+    padding: 20px;
+
+}
+.choseCurr{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
